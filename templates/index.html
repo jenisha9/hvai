@@ -9,27 +9,26 @@
 <body>
   <main class="container">
     <section class="hero">
-      <p class="eyebrow">Python + Flask + Gemini</p>
-      <h1>Maintenance Image Comparison</h1>
+      <h1>Maintenance Image Inspection</h1>
       <p>Upload two inspection images and receive a structured comparison with differences, confidence, and maintenance recommendations.</p>
     </section>
 
     <form id="compareForm" class="card">
       <div class="grid">
         <label class="upload-box">
-          <span>Image 1</span>
+          <span>Before Image</span>
           <input type="file" name="image1" accept="image/png,image/jpeg,image/webp,image/heic,image/heif" required>
           <img id="preview1" alt="Image 1 preview">
         </label>
 
         <label class="upload-box">
-          <span>Image 2</span>
+          <span>After Image</span>
           <input type="file" name="image2" accept="image/png,image/jpeg,image/webp,image/heic,image/heif" required>
           <img id="preview2" alt="Image 2 preview">
         </label>
       </div>
 
-      <button id="submitButton" type="submit">Compare images</button>
+      <button id="submitButton" type="submit">Generate Report</button>
       <p id="status" role="status"></p>
     </form>
 
