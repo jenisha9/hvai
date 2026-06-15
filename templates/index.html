@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini Image Comparison</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Python + Flask + Gemini</p>
+      <h1>Maintenance Image Comparison</h1>
+      <p>Upload two inspection images and receive a structured comparison with differences, confidence, and maintenance recommendations.</p>
+    </section>
+
+    <form id="compareForm" class="card">
+      <div class="grid">
+        <label class="upload-box">
+          <span>Image 1</span>
+          <input type="file" name="image1" accept="image/png,image/jpeg,image/webp,image/heic,image/heif" required>
+          <img id="preview1" alt="Image 1 preview">
+        </label>
+
+        <label class="upload-box">
+          <span>Image 2</span>
+          <input type="file" name="image2" accept="image/png,image/jpeg,image/webp,image/heic,image/heif" required>
+          <img id="preview2" alt="Image 2 preview">
+        </label>
+      </div>
+
+      <button id="submitButton" type="submit">Compare images</button>
+      <p id="status" role="status"></p>
+    </form>
+
+    <section id="results" class="results hidden">
+      <article class="card">
+        <h2>Summary</h2>
+        <p id="summary"></p>
+      </article>
+
+      <article class="card">
+        <h2>Differences</h2>
+        <div id="differences"></div>
+      </article>
+
+      <article class="card">
+        <h2>Confidence</h2>
+        <div class="confidence-row">
+          <progress id="confidenceBar" value="0" max="1"></progress>
+          <strong id="confidenceText">0%</strong>
+        </div>
+        <p id="limitations"></p>
+      </article>
+
+      <article class="card">
+        <h2>Maintenance report</h2>
+        <div id="maintenanceReport"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
